@@ -1,0 +1,24 @@
+
+
+.navbar{
+    background-color: rgb(35, 75, 35);
+    position: sticky;/*makes the navbar static */
+    top: 0; /* the navbar is on the top of the page*/
+    z-index: 1000; /* Keeps it above other elements */
+    width: 100%;
+    padding: 15px 20px;
+}
+
+.navbar li{
+    display: inline-block; /* put the elements of the navbar in horizontal order*/
+    padding: 0 20px;
+
+}
+
+/*apply for all of the a from the navbar*/
+.navbar a{
+    text-decoration: none;
+    color: rgb(245, 235, 241);
+
+}
+ 

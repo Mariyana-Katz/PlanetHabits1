@@ -1,0 +1,23 @@
+
+
+
+.hero{
+        background-image: url("/PlanetHabits.webp")  ;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        font-family:'Lobster', sans-serif;
+         filter: drop-shadow(20px 20px 20px rgb(102, 199, 107));
+        display: flex;
+        color: rgb(253, 253, 247);
+        font-size: large;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* <-- this keeps content at the top */
+        align-items: center;
+        height: 40vh; 
+        padding-top: 5%;
+            
+           
+    }

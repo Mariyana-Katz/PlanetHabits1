@@ -1,14 +1,13 @@
 import React from 'react'
-
+import './Navbar.css'
 
 
 function Navbar() {
   return (
-    <nav className="navbar fixed-top navbar-expand-lg bg-light">
+    <nav className="navbar fixed-top navbar-expand-lg">
       <div className="container-fluid">
-        <a className="navbar-brand fw-bold" href="#home">
-          <span className="text-primary">Planet Habits</span>
-          <img src="/images/logo.png" alt="Planet Habits Logo" />
+        <a className="navbar-brand fw-bold" href="#home">Planet Habits
+         {/* <img src="/images/logo.png" alt="Planet Habits Logo" /> */}
         </a>
 
         <button
