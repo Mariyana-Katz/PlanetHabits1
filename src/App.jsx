@@ -1,22 +1,20 @@
 
-import './App.css'
-import Navbar from './Components.jsx/Navbar'
-import Hero from './Components.jsx/Hero'
-import Footer from './Components.jsx/Footer'
-
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HabitTrackerDashboard from './Pages/HabitTrackerDashboard';
+import Home from './Pages/Home';
+import MyProgres from './Pages/MyProgres'
 
 function App() {
- 
-
   return (
-    <>
-   
-     <Navbar/>
-     <Hero/>
-     <Footer/>
-    </>
-  )
+     
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<HabitTrackerDashboard />} />
+        <Route path="/progres" element={<MyProgres/>}/>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

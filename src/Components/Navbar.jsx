@@ -1,5 +1,6 @@
 import React from 'react'
 import './Navbar.css'
+import {Link} from 'react-router-dom';
 
 
 function Navbar() {
@@ -42,9 +43,9 @@ function Navbar() {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#home">
+                <Link className="nav-link active" aria-current="page" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a
@@ -68,22 +69,22 @@ function Navbar() {
                 </a>
                 <ul className="dropdown-menu bg-primary">
                   <li>
-                    <a className="dropdown-item" href="habit-tracker-dashboard.html">
+                    <Link className="dropdown-item" to="/dashboard">
                       Habit Tracker Dashboard
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="my-progress.html">
+                    <Link className="dropdown-item" to="/progres">
                       My Progress
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <a className="dropdown-item" href="settings1.html">
+                    <Link className="dropdown-item" to="/preferences">
                       Settings/Preferences
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>
