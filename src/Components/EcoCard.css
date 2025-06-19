@@ -1,0 +1,28 @@
+.card-img-top {
+  height: 300px; /* or any height that works for all images */
+  object-fit: cover;
+  filter: drop-shadow(20px 20px 20px rgb(102, 199, 107));
+}
+
+.card-title {
+  color: rgb(40, 94, 29);
+}
+
+.btn-link {
+  color: rgb(40, 94, 29);
+}
+
+.modal-dialog {
+  align-items: center;
+  text-align: center;
+  background-color: rgb(201, 181, 156);
+}
+
+#bottle {
+  justify-content: center;
+  text-align: center;
+}
+
+.modal-body {
+  background-color: rgb(114, 209, 150);
+}

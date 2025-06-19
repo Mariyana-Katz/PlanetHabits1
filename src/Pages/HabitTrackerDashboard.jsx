@@ -3,6 +3,7 @@
 import Navbar from '../Components/Navbar'
 import Hero from '../Components/Hero'
 import Footer from '../Components/Footer'
+import IntroCard from '../Components/IntroCard'
 
 
 export default function HabitTrackerDashboard(){
