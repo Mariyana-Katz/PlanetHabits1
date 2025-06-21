@@ -1,14 +1,14 @@
-import React from 'react'
-import './Navbar.css'
-import {Link} from 'react-router-dom';
-
+import React from "react";
+import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav className="navbar fixed-top navbar-expand-lg">
       <div className="container-fluid">
-        <a className="navbar-brand fw-bold" href="#home">Planet Habits
-         {/* <img src="/images/logo.png" alt="Planet Habits Logo" /> */}
+        <a className="navbar-brand fw-bold" href="#home">
+          Planet Habits
+          {/* <img src="/images/logo.png" alt="Planet Habits Logo" /> */}
         </a>
 
         <button
@@ -29,7 +29,10 @@ function Navbar() {
           aria-labelledby="offcanvasNavbarLabel"
         >
           <div className="offcanvas-header">
-            <h5 className="offcanvas-title fw-bold text-white" id="offcanvasNavbarLabel">
+            <h5
+              className="offcanvas-title fw-bold text-white"
+              id="offcanvasNavbarLabel"
+            >
               Planet Habits
             </h5>
             <button
@@ -43,7 +46,7 @@ function Navbar() {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/Home">
+                <Link className="nav-link active" aria-current="page" to="/">
                   Home
                 </Link>
               </li>
@@ -58,7 +61,7 @@ function Navbar() {
                 </a>
               </li>
               <li className="nav-item dropdown">
-                <a
+                <Link
                   className="nav-link dropdown-toggle"
                   href="#more"
                   role="button"
@@ -66,7 +69,7 @@ function Navbar() {
                   aria-expanded="false"
                 >
                   Menu
-                </a>
+                </Link>
                 <ul className="dropdown-menu bg-primary">
                   <li>
                     <Link className="dropdown-item" to="/dashboard">
@@ -108,4 +111,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;
