@@ -1,15 +1,43 @@
 import React from "react";
 import "./Navbar.css";
+import { useTranslation } from "react-i18next";
 import DarkMode from "./DarkMode/DarkMode";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  /**
+   * The `t` function is provided by the `useTranslation` hook from the `react-i18next` library. Use {t("home")} instead of hardcoded Home to be translated and also it has to be in the en.json and es.json files .
+   */
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <nav className="navbar fixed-top navbar-expand-lg">
       <div className="container-fluid">
         <DarkMode />
-        <a className="navbar-brand fw-bold" href="#home">
-          Planet Habits
+
+        {/* Language switcher buttons */}
+        <div className="language-switcher mx-3">
+          <button
+            type="button"
+            className="btn btn-primary rounded-circle"
+            onClick={() => changeLanguage("en")}
+          >
+            EN
+          </button>
+
+          <button
+            type="button"
+            className="btn btn-primary rounded-circle"
+            onClick={() => changeLanguage("es")}
+          >
+            ES
+          </button>
+        </div>
+        <a className="navbar-brand fw-bold text-light" href="#home">
+          {t("siteTitle")}
           {/* <img src="/images/logo.png" alt="Planet Habits Logo" /> */}
         </a>
 
@@ -49,7 +77,7 @@ function Navbar() {
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/">
-                  Home
+                  {t("home")}
                 </Link>
               </li>
               <li className="nav-item">
@@ -59,7 +87,7 @@ function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Eco News
+                  {t("ecoNews")}
                 </a>
               </li>
               <li className="nav-item dropdown">
@@ -70,17 +98,17 @@ function Navbar() {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Menu
+                  {t("menu")}
                 </Link>
                 <ul className="dropdown-menu bg-primary">
                   <li>
                     <Link className="dropdown-item" to="/dashboard">
-                      Habit Tracker Dashboard
+                      {t("dashboard")}
                     </Link>
                   </li>
                   <li>
                     <Link className="dropdown-item" to="/progress">
-                      My Progress
+                      {t("progress")}
                     </Link>
                   </li>
                   <li>
@@ -88,7 +116,7 @@ function Navbar() {
                   </li>
                   <li>
                     <Link className="dropdown-item" to="/preferences">
-                      Settings/Preferences
+                      {t("settings")}
                     </Link>
                   </li>
                 </ul>
@@ -99,11 +127,11 @@ function Navbar() {
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Search"
-                aria-label="Search"
+                placeholder={t("search")}
+                aria-label={t("search")}
               />
               <button className="btn btn-outline-success" type="submit">
-                Search
+                {t("search")}
               </button>
             </form>
           </div>

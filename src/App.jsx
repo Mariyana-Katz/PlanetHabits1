@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HabitTrackerDashboard from "./Pages/HabitTrackerDashboard";
 import Home from "./Pages/Home";
 import MyProgres from "./Pages/MyProgres";
+import Preferences from "./Pages/Preferences";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<HabitTrackerDashboard />} />
         <Route path="/progres" element={<MyProgres />} />
+        <Route path="/preferences" element={<Preferences />} />
       </Routes>
     </BrowserRouter>
   );
