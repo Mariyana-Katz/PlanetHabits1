@@ -1,11 +1,13 @@
 import React from "react";
 import "./Navbar.css";
+import DarkMode from "./DarkMode/DarkMode";
 import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav className="navbar fixed-top navbar-expand-lg">
       <div className="container-fluid">
+        <DarkMode />
         <a className="navbar-brand fw-bold" href="#home">
           Planet Habits
           {/* <img src="/images/logo.png" alt="Planet Habits Logo" /> */}
@@ -77,7 +79,7 @@ function Navbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/progres">
+                    <Link className="dropdown-item" to="/progress">
                       My Progress
                     </Link>
                   </li>

@@ -9,7 +9,7 @@ function HabitCard({ name, nikName }) {
         </div>
         <div className="col-md-6">
           <div className="chec-day pt-1"></div>
-          {/*here buttons and checkboxes*/}
+          {/* buttons and checkboxes below*/}
         </div>
       </div>
     </>

@@ -1,0 +1,10 @@
+/* Add to your global CSS file */
+body.dark {
+  background: #181818;
+  color: #f0f0f0;
+}
+
+/* Example: override other elements as needed */
+body.dark a {
+  color: #90caf9;
+}

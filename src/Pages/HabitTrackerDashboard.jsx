@@ -37,7 +37,9 @@ export default function HabitTrackerDashboard() {
           </>
         }
       />
-       {/* Render HabitCards dynamically */}
+      {/*} Render HabitCards dynamically based on the habits array below.
+       Each HabitCard receives a unique key and props for name and nikName.
+       This allows for easy updates and scalability if habits change in the future.*/}
       <div className="container">
         {habits.map((habit) => (
           <HabitCard key={habit.nikName} name={habit.name} nikName={habit.nikName} />
