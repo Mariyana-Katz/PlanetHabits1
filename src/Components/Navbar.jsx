@@ -20,8 +20,18 @@ function Navbar() {
         </a>
         <DarkMode />
 
-        <button onClick={() => changeLanguage("en")}>English</button>
-        <button onClick={() => changeLanguage("es")}>Español</button>
+        <button
+          className="btn btn-success border rounded-circle"
+          onClick={() => changeLanguage("en")}
+        >
+          En
+        </button>
+        <button
+          className="btn btn-success border rounded-circle"
+          onClick={() => changeLanguage("es")}
+        >
+          Es
+        </button>
 
         <button
           className="navbar-toggler"
