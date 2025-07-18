@@ -37,6 +37,7 @@ export default function HabitTrackerDashboard() {
           </>
         }
       />
+      <button>Click Here To See Your Progress</button>
       {/*} Render HabitCards dynamically based on the habits array below.
        Each HabitCard receives a unique key and props for name and nikName.
        This allows for easy updates and scalability if habits change in the future.*/}
