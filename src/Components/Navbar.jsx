@@ -2,16 +2,26 @@ import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import DarkMode from "./DarkMode/DarkMode.jsx";
+import { useTranslation } from "react-i18next";
 
 function Navbar() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng); //change the language
+  };
+
   return (
     <nav className="navbar fixed-top navbar-expand-lg">
       <div className="container-fluid">
         <a className="navbar-brand fw-bold" href="#home">
-          Planet Habits
+          {t("siteTitle")}
           {/* <img src="/images/logo.png" alt="Planet Habits Logo" /> */}
         </a>
         <DarkMode />
+
+        <button onClick={() => changeLanguage("en")}>English</button>
+        <button onClick={() => changeLanguage("es")}>Español</button>
 
         <button
           className="navbar-toggler"
@@ -49,7 +59,7 @@ function Navbar() {
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/">
-                  Home
+                  {t("home")}
                 </Link>
               </li>
               <li className="nav-item">
@@ -59,7 +69,7 @@ function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Eco News
+                  {t("ecoNews")}
                 </a>
               </li>
               <li className="nav-item dropdown">
@@ -70,17 +80,17 @@ function Navbar() {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Menu
+                  {t("menu")}
                 </Link>
                 <ul className="dropdown-menu bg-primary">
                   <li>
                     <Link className="dropdown-item" to="/dashboard">
-                      Habit Tracker Dashboard
+                      {t("dashboard")}
                     </Link>
                   </li>
                   <li>
                     <Link className="dropdown-item" to="/progres">
-                      My Progress
+                      {t("progress")}
                     </Link>
                   </li>
                   <li>
@@ -88,7 +98,7 @@ function Navbar() {
                   </li>
                   <li>
                     <Link className="dropdown-item" to="/preferences">
-                      Settings/Preferences
+                      {t("settings")}
                     </Link>
                   </li>
                 </ul>
@@ -99,11 +109,11 @@ function Navbar() {
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Search"
+                placeholder={t("search")}
                 aria-label="Search"
               />
               <button className="btn btn-outline-success" type="submit">
-                Search
+                {t("search")}
               </button>
             </form>
           </div>

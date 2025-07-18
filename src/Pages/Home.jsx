@@ -12,14 +12,21 @@ import bicycleImage from "../assets/ecoPictures/bicycle.webp";
 import recycleImage from "../assets/ecoPictures/recycle.webp";
 import waterImage from "../assets/ecoPictures/water.webp";
 import woodImage from "../assets/ecoPictures/wood.webp";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+
+  //const for useTranslation
+  const { t, i18n } = useTranslation();
+   const changeLanguage = (lng) => {
+      i18n.changeLanguage(lng); //change the language
+    };
   return (
     <div>
       <Navbar />
       <Hero />
       <IntroCard
-        title=" Welcome to Planet Habits!"
+        title={t('welcomeMessage')}
         message={
           <>
             "Start small, make a big impact. Planet Habits helps you build
