@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HabitTrackerDashboard from "./Pages/HabitTrackerDashboard";
 import Home from "./Pages/Home";
-import MyProgres from "./Pages/MyProgres";
+import MyProgress from "./Pages/MyProgress";
 import Preferences from "./Pages/Preferences";
 
 function App() {
@@ -15,10 +15,10 @@ function App() {
       <Routes>
         {/* The path "/" is the root of your application, which will render the Home component. */}
         {/* The path "/dashboard" will render the HabitTrackerDashboard component. */}
-        {/* The path "/progres" will render the MyProgres component. */}
+        {/* The path "/progress" will render the MyProgres component. */}
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<HabitTrackerDashboard />} />
-        <Route path="/progres" element={<MyProgres />} />
+        <Route path="/myProgress" element={<MyProgress />} />
         <Route path="/preferences" element={<Preferences />} />
       </Routes>
     </BrowserRouter>

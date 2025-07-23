@@ -1,65 +1,65 @@
- /* footer css
+/* footer css
  */
-footer{
-    background-color:  rgb(247, 223, 179);
-    color:rgb(52, 126, 2);
-    text-align: center;
-    padding: 20px 0;
+footer {
+  text-align: center;
+  padding: 20px 0;
 }
 
-.footer-container{
-    display: flex;
-} 
-
-.cell{
-    flex: 1;
+.footer-container {
+  background-color: rgb(233, 201, 134);
+  display: flex;
 }
 
-.contact-info, .social-media, .copyright{
-    margin: 10px;
-    text-align: center;
+.cell {
+  flex: 1;
 }
-.contact-info h3, .social-media h3,.copyright {
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-align: center;
-   
+
+.contact-info,
+.social-media,
+.copyright {
+  margin: 10px;
+  text-align: center;
+}
+.contact-info h3,
+.social-media h3,
+.copyright {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .contact-info p {
-    margin: 5px 0;
-    text-align: center;
+  margin: 5px 0;
+  text-align: center;
 }
 
-.mail{
-    color: rgb(52, 126, 2);
+.mail {
+  color: rgb(95, 84, 23);
 }
 
 .social-media a {
-    color: rgb(97, 60, 12);
-    font-size: 20px;
-    height: 50px;
-    width: 50px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    background-color: white;
-    border-radius: 50%;
-    text-decoration: none;
+  color: rgb(34, 70, 14);
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  background-color: white;
+  border-radius: 50%;
+  text-decoration: none;
 }
 
-
 .social-media a:hover {
-    color: #1a9925;
+  color: #1a9925;
 }
 
 .copyright {
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: 100%;
-    opacity: 0.5;
-    align-self:center;
+  color: rgb(36, 31, 7);
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 100%;
+  opacity: 0.5;
+  align-self: center;
 }
-
-  

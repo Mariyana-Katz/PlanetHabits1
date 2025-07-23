@@ -16,7 +16,7 @@ const habits = [
 
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-export default function MyProgres() {
+export default function MyProgress() {
   const [progress, setProgress] = useState([]);
 
   useEffect(() => {
@@ -40,15 +40,14 @@ export default function MyProgres() {
       <Hero />
       <div className="container mt-5 pb-5 ">
         <p className="progress justify-content-center fs-3 p-5 bg-success fw-bold">
-          My Habit Progress
+          My Planet Habits Progress
         </p>
-        <ul className="p-5 fw-bold">
+        <ul className="p-5 fw-bold border rounded-3 bg-secondary">
           {progress.map(({ name, completedCount }) => (
             <li key={name}>
               {name}: {completedCount} / 7 days{" "}
               {/* Shows clapping hands if 7/7 */}
               {completedCount === 7 && "👏"}
-              
               {}
             </li>
           ))}

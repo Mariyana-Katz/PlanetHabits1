@@ -3,10 +3,11 @@ import Hero from "../Components/Hero";
 import Footer from "../Components/Footer";
 import IntroCard from "../Components/IntroCard";
 import HabitCard from "../Components/HabitCard";
+import { Link } from "react-router-dom";
+import MyProgress from "./MyProgress";
 
 export default function HabitTrackerDashboard() {
-
-    const habits = [
+  const habits = [
     { id: 1, name: "Planting for the Planet!", nikName: "plant" },
     { id: 2, name: "Tote-ally Eco-Friendly!", nikName: "bag" },
     { id: 3, name: "One Bottle, Endless Impact!", nikName: "bottle" },
@@ -37,14 +38,25 @@ export default function HabitTrackerDashboard() {
           </>
         }
       />
-      <button>Click Here To See Your Progress</button>
+
       {/*} Render HabitCards dynamically based on the habits array below.
        Each HabitCard receives a unique key and props for name and nikName.
        This allows for easy updates and scalability if habits change in the future.*/}
       <div className="container">
         {habits.map((habit) => (
-          <HabitCard key={habit.nikName} name={habit.name} nikName={habit.nikName} />
+          <HabitCard
+            key={habit.nikName}
+            name={habit.name}
+            nikName={habit.nikName}
+          />
         ))}
+      </div>
+<div className="d-flex justify-content-center">
+      <Link to="/MyProgress">
+        <button className=" progress-button btn bg-success rounded-pill p-3 m-5 fw-bold">
+          Click Here To See Your Progress
+        </button>
+      </Link>
       </div>
       <Footer />
     </>

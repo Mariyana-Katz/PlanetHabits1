@@ -99,7 +99,7 @@ function Navbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/progres">
+                    <Link className="dropdown-item" to="/myProgress">
                       {t("progress")}
                     </Link>
                   </li>
