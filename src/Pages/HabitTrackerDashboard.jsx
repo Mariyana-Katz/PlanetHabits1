@@ -1,10 +1,13 @@
 import Navbar from "../Components/Navbar";
+import { useState, useEffect } from "react";
 import Hero from "../Components/Hero";
 import Footer from "../Components/Footer";
 import IntroCard from "../Components/IntroCard";
 import HabitCard from "../Components/HabitCard";
 import { Link } from "react-router-dom";
 import MyProgress from "./MyProgress";
+import "./HabitTrackerDashboard.css";
+import Preferences from "./Preferences";
 
 export default function HabitTrackerDashboard() {
   const habits = [
@@ -17,6 +20,21 @@ export default function HabitTrackerDashboard() {
     { id: 7, name: "Every Drop Counts!", nikName: "water" },
     { id: 8, name: "Rooted in Change!", nikName: "trees" },
   ];
+
+  const [motivationMessage, setMotivationMessage] = useState("");
+
+  // State for storing the user's motivational message input. If
+  // the user enters a message, it will be saved to localStorage.
+  const handleMotivationChange = (e) => {
+    setMotivationMessage(e.target.value);
+    localStorage.setItem("motivationMessage", e.target.value);
+  };
+  useEffect(() => {
+    const saved = localStorage.getItem("motivationMessage");
+    if (saved) {
+      setMotivationMessage(saved);
+    }
+  }, []);
 
   return (
     <>
@@ -39,10 +57,16 @@ export default function HabitTrackerDashboard() {
         }
       />
 
+      {motivationMessage && (
+        <div className="alert alert-success text-center mx-5 fw-bold fs-5">
+          {motivationMessage}
+        </div>
+      )}
+
       {/*} Render HabitCards dynamically based on the habits array below.
        Each HabitCard receives a unique key and props for name and nikName.
        This allows for easy updates and scalability if habits change in the future.*/}
-      <div className="container">
+      <div className="container border border-3 border-secondary rounded-4 bg-secondary">
         {habits.map((habit) => (
           <HabitCard
             key={habit.nikName}
@@ -51,12 +75,12 @@ export default function HabitTrackerDashboard() {
           />
         ))}
       </div>
-<div className="d-flex justify-content-center">
-      <Link to="/MyProgress">
-        <button className=" progress-button btn bg-success rounded-pill p-3 m-5 fw-bold">
-          Click Here To See Your Progress
-        </button>
-      </Link>
+      <div className="d-flex justify-content-center">
+        <Link to="/MyProgress">
+          <button className=" progress-button btn bg-secondary rounded-pill p-3 m-5 fw-bold">
+            Click Here To See Your Progress
+          </button>
+        </Link>
       </div>
       <Footer />
     </>
