@@ -57,11 +57,15 @@ export default function HabitTrackerDashboard() {
         }
       />
 
-      {motivationMessage && (
-        <div className="alert alert-success text-center mx-5 fw-bold fs-5">
-          {motivationMessage}
-        </div>
-      )}
+      {/*  Input field for users to enter a personal motivational message.
+ The message is saved to localStorage and displayed above the habit cards. */}
+      <div className="container ">
+        {motivationMessage && (
+          <div className="alert alert-secondary text-center border border-2 border-secondary fw-bold fs-5">
+            {motivationMessage}
+          </div>
+        )}
+      </div>
 
       {/*} Render HabitCards dynamically based on the habits array below.
        Each HabitCard receives a unique key and props for name and nikName.

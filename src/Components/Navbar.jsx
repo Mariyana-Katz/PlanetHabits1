@@ -1,7 +1,6 @@
 import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import DarkMode from "./DarkMode/DarkMode.jsx";
 import { useTranslation } from "react-i18next";
 
 function Navbar() {
@@ -18,7 +17,6 @@ function Navbar() {
           {t("siteTitle")}
           {/* <img src="/images/logo.png" alt="Planet Habits Logo" /> */}
         </a>
-        <DarkMode />
 
         <button
           className="btn btn-success border rounded-circle"
@@ -115,7 +113,7 @@ function Navbar() {
               </li>
             </ul>
 
-            <form className="d-flex mt-3" role="search">
+            <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
                 type="search"

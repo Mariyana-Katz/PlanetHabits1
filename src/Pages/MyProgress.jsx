@@ -39,7 +39,7 @@ export default function MyProgress() {
       <Navbar />
       <Hero />
       <div className="container mt-5 pb-5 ">
-        <p className="progress justify-content-center fs-3 p-5 bg-success fw-bold">
+        <p className="progress d-flex align-items-center justify-content-center border border-2 border-black fs-3 p-5 bg-success fw-bold">
           My Planet Habits Progress
         </p>
         <ul className="p-5 fw-bold border rounded-3 bg-secondary">
