@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-function HabitCard({ nikName, name }) {
+// ...existing code...
+function HabitCard({ nikName, name, onHabitUpdate }) {
   const [checkedDays, setCheckedDays] = useState({});
 
-  // Load saved state on component mount
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem(nikName)) || {};
     setCheckedDays(saved);
@@ -15,10 +15,13 @@ function HabitCard({ nikName, name }) {
   const handleChange = (day) => {
     const updated = {
       ...checkedDays,
-      [day]: !checkedDays[day], //flipp the current value of the selected day
+      [day]: !checkedDays[day],
     };
     setCheckedDays(updated);
-    localStorage.setItem(nikName, JSON.stringify(updated)); //convert object to a string because localStorage only accept strings
+    localStorage.setItem(nikName, JSON.stringify(updated));
+    if (onHabitUpdate) {
+      onHabitUpdate(nikName);
+    }
   };
 
   return (
@@ -48,5 +51,6 @@ function HabitCard({ nikName, name }) {
     </div>
   );
 }
+// ...existing code...
 
 export default HabitCard;

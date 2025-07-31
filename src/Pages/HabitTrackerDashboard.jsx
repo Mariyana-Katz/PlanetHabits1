@@ -36,6 +36,32 @@ export default function HabitTrackerDashboard() {
     }
   }, []);
 
+
+
+  const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  
+  const resetAllHabits = () => {
+    habits.forEach((habit) => {
+      localStorage.setItem(habit.nikName, JSON.stringify({}));
+    });
+    window.location.reload();
+  };
+
+  const handleHabitUpdate = (nikName) => {
+    const saved = JSON.parse(localStorage.getItem(nikName)) || {};
+    const completedCount = days.reduce(
+      (count, day) => count + (saved[day] ? 1 : 0),
+      0
+    );
+    if (completedCount === 7) {
+      resetAllHabits();
+      alert("Congratulations! All progress has been reset for a new week.");
+    }
+  };
+
+
+
   return (
     <>
       <Navbar />
@@ -76,9 +102,11 @@ export default function HabitTrackerDashboard() {
             key={habit.nikName}
             name={habit.name}
             nikName={habit.nikName}
+            onHabitUpdate={handleHabitUpdate} // <-- Add this line
           />
         ))}
       </div>
+
       <div className="d-flex justify-content-center">
         <Link to="/MyProgress">
           <button className=" progress-button btn bg-secondary rounded-pill p-3 m-5 fw-bold">
