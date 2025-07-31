@@ -25,7 +25,7 @@ export default function Home() {
     <div>
       <Navbar />
       <Hero />
-      <IntroCard
+      <IntroCard 
         title={t('welcomeMessage')}
         message={
           <>

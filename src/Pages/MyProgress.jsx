@@ -53,6 +53,47 @@ export default function MyProgress() {
           ))}
         </ul>
       </div>
+      <div className="container mb-5">
+        <h4 className="text-center mb-3">Habits Completion Chart</h4>
+        <div style={{ maxWidth: 500, margin: "0 auto" }}>
+          <svg width="100%" height={300}>
+            {progress.map(({ name, completedCount }, idx) => {
+              const percent = (completedCount / 7) * 100;
+              const barHeight = 25;
+              const barGap = 15;
+              return (
+                <g key={name} transform={`translate(0, ${idx * (barHeight + barGap)})`}>
+                  <rect
+                    x={0}
+                    y={0}
+                    width={`${percent * 4}`}
+                    height={barHeight}
+                    fill="#198754"
+                    rx={6}
+                  />
+                  <text
+                    x={10}
+                    y={barHeight / 2 + 6}
+                    fill="#fff"
+                    fontSize={16}
+                    fontWeight="bold"
+                  >
+                    {name}
+                  </text>
+                  <text
+                    x={percent * 4 + 10}
+                    y={barHeight / 2 + 6}
+                    fill="#000"
+                    fontSize={16}
+                  >
+                    {Math.round(percent)}%
+                  </text>
+                </g>
+              );
+            })}
+          </svg>
+        </div>
+      </div>
 
       <Footer />
     </>

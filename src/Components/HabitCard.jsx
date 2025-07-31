@@ -11,13 +11,14 @@ function HabitCard({ nikName, name }) {
     setCheckedDays(saved);
   }, [nikName]);
 
+  //handles checking/unchecking days and save the change in the localStorage
   const handleChange = (day) => {
     const updated = {
       ...checkedDays,
-      [day]: !checkedDays[day],
+      [day]: !checkedDays[day], //flipp the current value of the selected day
     };
     setCheckedDays(updated);
-    localStorage.setItem(nikName, JSON.stringify(updated));
+    localStorage.setItem(nikName, JSON.stringify(updated)); //convert object to a string because localStorage only accept strings
   };
 
   return (
