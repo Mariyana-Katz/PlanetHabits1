@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import MyProgress from "./MyProgress";
 import "./HabitTrackerDashboard.css";
 import Preferences from "./Preferences";
+import Swal from "sweetalert2";
 
 export default function HabitTrackerDashboard() {
   const habits = [
@@ -36,11 +37,8 @@ export default function HabitTrackerDashboard() {
     }
   }, []);
 
-
-
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-  
   const resetAllHabits = () => {
     habits.forEach((habit) => {
       localStorage.setItem(habit.nikName, JSON.stringify({}));
@@ -55,12 +53,20 @@ export default function HabitTrackerDashboard() {
       0
     );
     if (completedCount === 7) {
-      resetAllHabits();
-      alert("Congratulations! All progress has been reset for a new week.");
+      habits.forEach((habit) => {
+        localStorage.setItem(habit.nikName, JSON.stringify({}));
+      });
+      Swal.fire({
+        title: "Congratulations!",
+        text: "All progress has been reset for a new week.",
+        icon: "success",
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "OK",
+      }).then(() => {
+        window.location.reload();
+      });
     }
   };
-
-
 
   return (
     <>
